@@ -399,11 +399,12 @@ def main():
           "FIVE EUROPEAN STATES PLAN A JOINT HUB FOR REJECTED ASYLUM SEEKERS.")
     footer()
     here = os.path.dirname(os.path.abspath(__file__))
-    write_png(os.path.join(here, "entry.png"))
     outdir = os.environ.get("MAKEFUN_OUTPUT_DIR")
     if outdir:
         os.makedirs(outdir, exist_ok=True)
         write_png(os.path.join(outdir, "entry.png"))
+    else:
+        write_png(os.path.join(here, "entry.png"))
 
 
 if __name__ == "__main__":
